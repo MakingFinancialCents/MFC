@@ -207,31 +207,32 @@ percentage of your salary after you graduate.
     <div class="modal-content">
       <div class="modal-header">
         <button type="button" class="close" data-dismiss="modal">&times;</button>
-        <h4 class="modal-title">Create an Account</h4>
+        <h1 class="modal-title" style="text-align: center;">Create an Account</h1>
       </div>
-      <div class="modal-body" style="text-align:center">
+      <div class="modal-body" style="padding-left: 100px; margin-bottom: 30px;">
         <div class="input-field col s12">
-          <label for="name">Name</label>
+          <h3 for="name">Name</h3>
         </div>
         <div class="input-field col s12">
-          <input id="txtName" type="text" placeholder="Name" class="validate">
+          <input id="txtName" type="text" placeholder="Name" class="validate" style="width:250px;font-size:14pt;">
         </div>
         <div class="input-field col s12">
-           <label for="email">Email</label>
+           <h3 for="email">Email</h3>
         </div>
         <div class="input-field col s12">
-          <input id="txtEmail_SignUp" type="email" placeholder="Email" class="validate">
+          <input id="txtEmail_SignUp" type="email" placeholder="Email" class="validate" style="width:250px;font-size:14pt;">
         </div>
         <div class="input-field col s12">
-          <label for="password">Password</label>
+          <h3 for="password">Password</h3>
         </div>
         <div class="input-field col s12">
-          <input id="txtPassword_SignUp" type="password" placeholder="Password" class="validate">
+          <input id="txtPassword_SignUp" type="password" placeholder="Password" class="validate" style="width:250px;font-size:14pt;">
         </div>
       </div>
       <div class="modal-footer">
-        <button id="btnSignUp" type="button" class="btn btn-info btn-lg" data-dismiss="modal">Submit</button>
-        <button type="button" class="btn btn-info btn-lg" data-dismiss="modal">Close</button>
+        <div id="errorSignUp" class="modalError">Oops! Invalid name, email or password.</div>
+        <button id="btnSignUp" type="button" class="btn btn-info btn-md">Submit</button>
+        <button id="signUpclose" type="button" class="btn btn-info btn-md" data-dismiss="modal">Close</button>
       </div>
     </div>
 
@@ -248,27 +249,28 @@ percentage of your salary after you graduate.
     <div class="modal-content">
       <div class="modal-header">
         <button type="button" class="close" data-dismiss="modal">&times;</button>
-        <h4 class="modal-title">Welcome Back! Log in</h4>
+        <h1 class="modal-title" style="text-align: center;">Welcome Back! Log in</h1>
       </div>
-      <div class="modal-body"  style="text-align:center;">
+      <div class="modal-body" style="padding-left: 100px; margin-bottom: 30px;">
         <div class="input-field col s12">
-           <label for="email">Email</label>
+           <h3 for="email">Email</h3>
         </div>
         <div class="input-field col s12">
-          <input id="txtEmail" type="email" placeholder="Email" class="validate">
+          <input id="txtEmail" type="email" placeholder="Email" class="validate" style="width:250px;font-size:14pt;">
 
         </div>
         <div class="input-field col s12">
-          <label for="password">Password</label>
+          <h3 for="password">Password</h3>
         </div>
         <div class="input-field col s12">
-          <input id="txtPassword" type="password" placeholder="Password" class="validate">
+          <input id="txtPassword" type="password" placeholder="Password" class="validate" style="width:250px;font-size:14pt;">
 
         </div>
       </div>
       <div class="modal-footer">
-        <button id="btnLogin" type="button" class="btn btn-info btn-lg" data-dismiss="modal">Submit</button>
-        <button type="button" class="btn btn-info btn-lg" data-dismiss="modal">Close</button>
+        <div id="errorLogIn" class="modalError">Oops! Invalid email or password. &nbsp</div>
+        <button id="btnLogin" type="button" class="btn btn-info btn-md">Submit</button>
+        <button id="logInclose" type="button" class="btn btn-info btn-md" data-dismiss="modal">Close</button>
       </div>
     </div>
 

@@ -196,3 +196,9 @@ html {
 .button:hover {
   background-color: #555;
 }
+
+.modalError {
+  font-size: 16px;
+  color: red;
+  padding: 10px;
+}

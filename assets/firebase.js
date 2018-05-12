@@ -15,6 +15,9 @@ var uid="";
 $('#logOut').hide();
 $('#welcome').hide();
 
+$('#errorLogIn').hide();
+$('#errorSignUp').hide();
+
 
 // Event Listener for Feedback button
 $('#text1').on("click", function(event) {
@@ -45,34 +48,54 @@ const btnLogOut = $('#btnLogOut');
 
 // Feedback push to Firebase
 $("#btnLogin").on('click', e => {
+hideError();
+  const email = $("#txtEmail").val();
+  const pass = $('#txtPassword').val();
+if(email != "" && pass != ""){
   $('#logIn').hide();
   $('#welcome').show();
   $('#signUp').hide();
   $('#logOut').show();
-  const email = $("#txtEmail").val();
-  const pass = $('#txtPassword').val();
   const auth = firebase.auth();
   const promise = auth.signInWithEmailAndPassword(email, pass);
   promise.catch(e => console.log(e.message));
   $("#txtEmail").val("");
   $('#txtPassword').val("");
+  $('#logInclose').click();
+
+
+}
+else{
+  $('#errorLogIn').show();
+}
 });
 
 //Eventlistener Signup
 $('#btnSignUp').on('click', e => {
-  $('#logIn').hide();
-  $('#welcome').show();
-  $('#signUp').hide();
-  $('#logOut').show();
+  hideError();
   const name = $('#txtName').val();
   const email = $('#txtEmail_SignUp').val();
   const pass = $('#txtPassword_SignUp').val();
-  const auth = firebase.auth();
-  const promise = auth.createUserWithEmailAndPassword(email, pass);
-  promise.catch(e => console.log(e.message));
-  $("#txtEmail__SignUp").val("");
-  $('#txtPassword__SignUp').val("");
+  if(name != "" && email != "" && pass != ""){
+    $('#logIn').hide();
+    $('#welcome').show();
+    $('#signUp').hide();
+    $('#logOut').show();
+    const auth = firebase.auth();
+    const promise = auth.createUserWithEmailAndPassword(email, pass);
+    promise.catch(e => console.log(e.message));
+    $("#txtEmail__SignUp").val("");
+    $('#txtPassword__SignUp').val("");
+    $('#txtName').val("");
+      $('#signUpclose').click();
+
+  }
+  else{
+    $('#errorSignUp').show();
+  }
 });
+
+
 var uidSet = function(){
   uid= firebase.auth().currentUser.uid;
 };
@@ -117,3 +140,13 @@ firebase.auth().onAuthStateChanged(firebaseUser => {
 
   }
 });
+
+function hideError(){
+  $('#errorLogIn').hide();
+  $('#errorSignUp').hide();
+
+}
+
+function showError(){
+  $('#errorLogIn').show();
+}
