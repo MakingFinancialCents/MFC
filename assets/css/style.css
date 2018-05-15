@@ -31,9 +31,11 @@
 }
 @media only screen and (max-width: 400px) {
     .jumbotron {
+      margin-top: 50px;
         background-image: url('../images/skyline.png');
         background-repeat: no-repeat;
         background-size:contain;
+
     }
 }
 
@@ -230,10 +232,8 @@ html {
 }
 
 .card {
-  box-shadow: 0 4px 8px 0;
-  z-index:-1;
-  background: rgba(0, 0, 0, 0.9);
-  color:white;
+   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+
 }
 
 .container {
