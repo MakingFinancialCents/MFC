@@ -1,10 +1,8 @@
-.pic {
-  background-image: url("../images/alarm.jpg");
-  background-size:cover;
-  z-index:-1;
-}
+
 .pic  {
-  background-size:cover;
+  float:left;
+  height:280px;
+  width: 300px;
 }
 .pics {
   float:left;
@@ -28,16 +26,16 @@
 
 .jumbotron1 {
   background-image: url('../images/aboutUsPic.png');
-  height:450px;
   background-attachment:fixed;
   background-repeat: no-repeat;
-  background-size: contain;
+  background-size: cover;
+  height:500px;
 }
 .cols {
   background-color:#003366;
   text-align:center;
   font-family:sans-serif;
-  color:black;
+  color:white;
 }
 .cols1 {
   background-color:#00995c;
@@ -80,15 +78,13 @@ background-attachment:fixed;
  .goal {
    border-radius: 25%;
  }
-.heading{
-  font-size:80px;
-  font-family:american typewriter;
-}
+
 ul{
   font-size: 20px;
   font-family: sans-serif;
   text-align:left;
 }
+
 ol{ font-size:20px;
   font-family: sans-serif;
 }
@@ -162,7 +158,6 @@ html {
 .container {
   padding: 0 16px;
   width:80%;
-  height:500px;
 }
 
 .container::after, .row::after {
