@@ -12,21 +12,36 @@
   <link rel="stylesheet" type="text/css" href="assets/css/style.css">
   <link rel="stylesheet" type="img" href="assets/images">
   <link rel=" icon" type="image/png"  href="assets/images/favicon.png">
-
+  <script defer src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/5.0.1/firebase.js"></script>
 </head>
 <body>
   <nav class="navbar navbar-inverse">
-    <div class="container-fluid">
-      <div class="navbar-header">
-        <a class="navbar-brand" href="./index.html">Making Financial Cents</a>
-      </div>
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="./index.html">Making Financial Cents</a>
+    </div>
+    <div class="collapse navbar-collapse" id="myNavbar">
       <ul class="nav navbar-nav">
-        <li><a href="./index.html">Home</a></li>
+        <li ><a href="./index.html">Home</a></li>
         <li class="active"><a href="./about.html">About Us</a></li>
         <li><a href="./location.html">Locations</a></li>
       </ul>
+      <ul class="nav navbar-nav navbar-right">
+        <li id="signUp" type="button" href="#"   data-toggle="modal" data-target="#modal3"> <a class="  glyphicon glyphicon-user"> Sign Up </a> </li>
+        <li id="welcome" type="button" href="#"  ><a class="glyphicon glyphicon-user"> Welcome! </a></li>
+        <li id="logIn" type="button" href="#"  data-toggle="modal" data-target="#modal4"><a  class=" glyphicon glyphicon-log-in"> Log in</a></li>
+        <li id="logOut" type="button" href="#"  onclick=''> <a class="  glyphicon glyphicon-log-out"> Log out</a></li>
+      </ul>
     </div>
-  </nav>
+  </div>
+</nav>
+
   <div class =" jumbotron1 img-responsive">
     <img class="pic img-responsive" src="assets/images/logo.png">
   </div>
@@ -68,6 +83,7 @@
       </div>
     </div>
   </div>
+  <div class="row">
   <div class="column">
     <div class="card">
       <img src="assets/images/luis.jpg" alt="John" style="width:100%; height:511.77px;">
@@ -97,5 +113,98 @@
         </div>
       </div>
     </div>
+    </div>
+    <!-- Modal Sign Up -->
+    <div class="modal fade" id="modal3" role="dialog">
+      <div class="modal-dialog">
+
+        <!-- Modal content-->
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal">&times;</button>
+            <h1 class="modal-title" style="text-align: center;">Create an Account</h1>
+          </div>
+          <div class="modal-body" style="padding-left: 100px; margin-bottom: 30px;">
+            <div class="input-field col s12">
+              <h3 for="name">Name</h3>
+            </div>
+            <div class="input-field col s12">
+              <input id="txtName" type="text" placeholder="Name" class="validate" style="width:250px;font-size:14pt;">
+            </div>
+            <div class="input-field col s12">
+              <h3 for="email">Email</h3>
+            </div>
+            <div class="input-field col s12">
+              <input id="txtEmail_SignUp" type="email" placeholder="Email" class="validate" style="width:250px;font-size:14pt;">
+            </div>
+            <div class="input-field col s12">
+              <h3 for="password">Password</h3>
+            </div>
+            <div class="input-field col s12">
+              <input id="txtPassword_SignUp" type="password" placeholder="Password" class="validate" style="width:250px;font-size:14pt;">
+            </div>
+          </div>
+          <div class="modal-footer">
+            <div id="errorSignUp" class="modalError">Oops! Invalid name, email or password.</div>
+            <button id="btnSignUp" type="button" class="btn btn-info btn-md">Submit</button>
+            <button id="signUpclose" type="button" class="btn btn-info btn-md" data-dismiss="modal">Close</button>
+          </div>
+        </div>
+
+      </div>
+    </div>
+    <!-- Modal Sign up ends -->
+
+
+    <!-- Modal Log In -->
+    <div class="modal fade" id="modal4" role="dialog">
+      <div class="modal-dialog">
+
+        <!-- Modal content-->
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal">&times;</button>
+            <h1 class="modal-title" style="text-align: center;">Welcome Back! Log in</h1>
+          </div>
+          <div class="modal-body" style="padding-left: 100px; margin-bottom: 30px;">
+            <div class="input-field col s12">
+              <h3 for="email">Email</h3>
+            </div>
+            <div class="input-field col s12">
+              <input id="txtEmail" type="email" placeholder="Email" class="validate" style="width:250px;font-size:14pt;">
+
+            </div>
+            <div class="input-field col s12">
+              <h3 for="password">Password</h3>
+            </div>
+            <div class="input-field col s12">
+              <input id="txtPassword" type="password" placeholder="Password" class="validate" style="width:250px;font-size:14pt;">
+
+            </div>
+          </div>
+          <div class="modal-footer">
+            <div id="errorLogIn" class="modalError">Oops! Invalid email or password. &nbsp</div>
+            <button id="btnLogin" type="button" class="btn btn-info btn-md">Submit</button>
+            <button id="logInclose" type="button" class="btn btn-info btn-md" data-dismiss="modal">Close</button>
+          </div>
+        </div>
+
+      </div>
+    </div>
+    <!-- Modal Log In ends -->
+
+    <div class="footer">
+      <h2>Like us on facebook and get a free copy of our MFC book!! &nbsp<a href="https://www.facebook.com/groups/392868707832767/"  class="fb btn"><i class="fab fa-facebook fa-3x"> </i></a> </h2>
+      <h3>We love to hear from You &nbsp&nbsp&nbsp Send Us an email:
+        <a href="mailto:makingfincents@gmail.com"> &nbsp<i class="fas fa-envelope-square fa-2x"></i></a>
+      </h3>
+      <p>2018 @ MakingFinancialCents</p>
+    </div>
+
+  </div>
+  <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+  <script src="assets/firebase.js"></script>
+
+
   </body>
   </html>
