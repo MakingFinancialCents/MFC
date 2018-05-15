@@ -150,3 +150,6 @@ function hideError(){
 function showError(){
   $('#errorLogIn').show();
 }
+function googleTranslateElementInit() {
+  new google.translate.TranslateElement({pageLanguage: 'en'}, 'google_translate_element');
+}

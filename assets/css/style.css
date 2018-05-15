@@ -34,7 +34,7 @@
       margin-top:auto;
         background-image: url('../images/skyline.png');
         background-repeat: no-repeat;
-        background-size:cover;
+        background-size:contain;
         height:350px;
 
     }
@@ -51,7 +51,7 @@
     .jumbotron1 {
         background-image: url('../images/aboutUs.jpg');
         background-repeat: no-repeat;
-        background-size:cover;
+        background-size:contain;
         height:350px;
     }
 }
