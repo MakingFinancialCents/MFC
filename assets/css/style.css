@@ -31,7 +31,6 @@
 }
 @media only screen and (max-width: 400px) {
     .jumbotron {
-      margin-top:auto;
         background-image: url('../images/skyline.png');
         background-repeat: no-repeat;
         background-size:contain;
