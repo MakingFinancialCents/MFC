@@ -29,6 +29,13 @@
      background-repeat: no-repeat;
      background-size: cover;
 }
+@media only screen and (max-width: 400px) {
+    .jumbotron {
+        background-image: url('../images/skyline.png');
+        background-repeat: no-repeat;
+        background-size:contain;
+    }
+}
 
 .jumbotron1 {
   background-image: url('../images/aboutUsPic.png');
@@ -41,10 +48,17 @@
     .jumbotron1 {
         background-image: url('../images/aboutUs.jpg');
         background-repeat: no-repeat;
-        background-size: cover;
+        background-size:contain;
     }
 }
-
+  .background{
+     background-image: url('../images/aboutUs.jpg');
+     z-index: -1;
+     width: 100%;
+     height: 100%;
+     background-repeat: no-repeat;
+     background-size: cover;
+}
 .cols {
   background-color:#003366;
   text-align:center;
@@ -137,7 +151,7 @@ ol{ font-size:20px;
 
 .facebook {
   background: #3B5998;
-  color: white;
+  color:blue;
 }
 
 .video-container {
@@ -155,6 +169,42 @@ left: 0;
 width: 100%;
 height: 100%;
 }
+video {
+  margin-top: 60px;
+  position: absolute;
+  transform: translate(-50%, -50%);
+  min-width: 100%;
+  min-height: 100%;
+  z-index: -1;
+  top:50%;
+  left:50%;
+  width:100%;
+  height:100%;
+  object-fit: cover;
+}
+.text{
+  z-index:2;
+  position:sticky;
+  background: rgba(0, 0, 0, 0.4);
+  top:0;
+  bottom:0;
+  left:0;
+  right:0;
+}
+.text h1{
+  font-size:80px;
+  color:	#e6bd19;
+  text-align: center;
+}
+.text h2{
+  font-size:60px;
+  color:	#e6bd19;
+  text-align: center;
+}
+.text h3{
+  color: white;
+}
+
 
 
 html {
@@ -180,7 +230,10 @@ html {
 }
 
 .card {
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  box-shadow: 0 4px 8px 0;
+  z-index:-1;
+  background: rgba(0, 0, 0, 0.9);
+  color:white;
 }
 
 .container {
@@ -195,7 +248,7 @@ html {
 }
 
 .title {
-  color: grey;
+  color:white;
 }
 
 .button {
